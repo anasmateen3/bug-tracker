@@ -94,12 +94,12 @@ export default function CreateTicketDialog({ open, onOpenChange, projectId, user
 
               <div className="space-y-2">
                 <Label htmlFor="assignee">Assignee</Label>
-                <Select value={assigneeId} onValueChange={setAssigneeId}>
+                <Select value={assigneeId || undefined} onValueChange={(val) => setAssigneeId(val === 'unassigned' ? '' : val)}>
                   <SelectTrigger data-testid="ticket-assignee-select">
                     <SelectValue placeholder="Unassigned" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="">Unassigned</SelectItem>
+                    <SelectItem value="unassigned">Unassigned</SelectItem>
                     {users.map((user) => (
                       <SelectItem key={user.id} value={user.id}>
                         {user.name}

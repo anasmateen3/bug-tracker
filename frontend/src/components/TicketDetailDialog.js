@@ -252,12 +252,12 @@ export default function TicketDetailDialog({ ticket, open, onOpenChange, users, 
                 <div className="space-y-2">
                   <Label>Assignee</Label>
                   {editing ? (
-                    <Select value={assigneeId} onValueChange={setAssigneeId}>
+                    <Select value={assigneeId || undefined} onValueChange={(val) => setAssigneeId(val === 'unassigned' ? '' : val)}>
                       <SelectTrigger data-testid="edit-ticket-assignee">
                         <SelectValue placeholder="Unassigned" />
                       </SelectTrigger>
                       <SelectContent>
-                        <SelectItem value="">Unassigned</SelectItem>
+                        <SelectItem value="unassigned">Unassigned</SelectItem>
                         {users.map((user) => (
                           <SelectItem key={user.id} value={user.id}>
                             {user.name}

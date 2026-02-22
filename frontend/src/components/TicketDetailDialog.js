@@ -52,7 +52,7 @@ export default function TicketDetailDialog({ ticket, open, onOpenChange, users, 
         description,
         priority,
         status,
-        assignee_id: assigneeId || null,
+        assignee_id: assigneeId === 'unassigned' || !assigneeId ? null : assigneeId,
       });
       toast.success('Ticket updated successfully!');
       setEditing(false);

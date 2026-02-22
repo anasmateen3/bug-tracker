@@ -1,0 +1,174 @@
+{
+  "identity": {
+    "persona": "E1: The Anti-AI Designer",
+    "mission": "Create a Bug Tracker that feels like a high-performance cockpit. Reject generic 'SaaS Blue' templates. Embrace precision, density, and flow.",
+    "core_principles": [
+      "Fusion: Airport Traffic Control (High Visibility) x Swiss Watch (Precision)",
+      "Density: Information density is a feature, not a bug. Use compact rows and tight grids.",
+      "Keyboard First: The UI must feel fast. Interactions should be instantaneous.",
+      "Anti-Pattern: No equal-width generic grids. Use the 'Bento' method for dashboards."
+    ]
+  },
+  "theme": {
+    "name": "Precision Flow",
+    "mode": "system",
+    "default_mode": "dark",
+    "radius": "0.5rem",
+    "colors": {
+      "palette": {
+        "primary": {
+          "name": "Electric Indigo",
+          "hex": "#6366f1",
+          "tailwind": "bg-indigo-500 text-white hover:bg-indigo-600"
+        },
+        "background": {
+          "light": "#ffffff",
+          "dark": "#09090b"
+        },
+        "surface": {
+          "light": "#f4f4f5",
+          "dark": "#18181b"
+        },
+        "border": {
+          "light": "#e4e4e7",
+          "dark": "#27272a"
+        },
+        "status": {
+          "success": "#22c55e",
+          "warning": "#f59e0b",
+          "error": "#ef4444",
+          "info": "#3b82f6"
+        }
+      },
+      "usage_rules": [
+        "Never use pure black (#000000). Use #09090b (Zinc-950).",
+        "Borders in dark mode must be subtle (#27272a).",
+        "Primary color is for Actions only (Buttons, Active States).",
+        "Status colors should be used sparingly as small badges or indicators."
+      ]
+    }
+  },
+  "typography": {
+    "fonts": {
+      "headings": {
+        "family": "Inter, sans-serif",
+        "weights": ["600", "700"],
+        "tracking": "-0.025em"
+      },
+      "body": {
+        "family": "Inter, sans-serif",
+        "weights": ["400", "500"]
+      },
+      "mono": {
+        "family": "JetBrains Mono, monospace",
+        "usage": "Ticket IDs (PROJ-123), Status Badges, Code Blocks, Metadata"
+      }
+    },
+    "scale": {
+      "h1": "text-4xl font-bold tracking-tight",
+      "h2": "text-2xl font-semibold tracking-tight",
+      "h3": "text-xl font-medium",
+      "body": "text-sm leading-relaxed",
+      "small": "text-xs text-muted-foreground",
+      "mono": "font-mono text-xs uppercase tracking-wider"
+    }
+  },
+  "layout": {
+    "grid_system": {
+      "dashboard": "grid grid-cols-1 md:grid-cols-12 gap-4",
+      "kanban": "flex h-full overflow-x-auto space-x-4 p-4",
+      "detail_view": "grid grid-cols-1 lg:grid-cols-3 gap-8"
+    },
+    "spacing": {
+      "container_padding": "p-6 md:p-8",
+      "section_gap": "gap-8",
+      "item_gap": "gap-4"
+    },
+    "z_index": {
+      "modal": "z-50",
+      "popover": "z-40",
+      "sticky_header": "z-30",
+      "dropdown": "z-20"
+    }
+  },
+  "components": {
+    "library": "shadcn/ui",
+    "customization_rules": [
+      "Border Radius: Use rounded-lg (0.5rem) for containers, rounded-md for inputs/buttons.",
+      "Shadows: Use subtle shadows (shadow-sm) in light mode. In dark mode, rely on 1px borders and bg differentiation.",
+      "Glassmorphism: Use backdrop-blur-md bg-background/80 for sticky headers and sidebars.",
+      "Buttons: Primary buttons should be solid Indigo. Secondary buttons should be 'Ghost' or 'Outline'."
+    ],
+    "specific_components": {
+      "kanban_board": {
+        "library": "@dnd-kit/core @dnd-kit/sortable",
+        "style": "Columns must have a subtle bg (zinc-50/zinc-900) and rounded corners. Cards must be white/zinc-900 with a border.",
+        "interaction": "Smooth drag transitions. Drop zones must highlight on hover."
+      },
+      "tables": {
+        "style": "Compact rows (h-10). Cell padding px-4. Header text xs uppercase muted-foreground font-medium.",
+        "features": "Sticky header, row hover effect (bg-muted/50)."
+      },
+      "modals": {
+        "style": "Clean, no heavy headers. Close button top-right. Content padding p-6."
+      },
+      "toasts": {
+        "library": "sonner",
+        "position": "bottom-right",
+        "theme": "system"
+      }
+    }
+  },
+  "assets": {
+    "icons": {
+      "library": "lucide-react",
+      "style": "Stroke width 1.5px or 2px. Size 16px (sm) or 20px (md)."
+    },
+    "images": {
+      "avatars": [
+        "https://images.unsplash.com/photo-1756699276661-c81336d16c43?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzOTB8MHwxfHNlYXJjaHwzfHxwcm9mZXNzaW9uYWwlMjBoZWFkc2hvdCUyMHBvcnRyYWl0JTIwZGl2ZXJzZSUyMHRlYW18ZW58MHx8fHwxNzcxNzgyMzA1fDA&ixlib=rb-4.1.0&q=85",
+        "https://images.unsplash.com/photo-1659100945967-f28a8d25705e?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzOTB8MHwxfHNlYXJjaHw0fHxwcm9mZXNzaW9uYWwlMjBoZWFkc2hvdCUyMHBvcnRyYWl0JTIwZGl2ZXJzZSUyMHRlYW18ZW58MHx8fHwxNzcxNzgyMzA1fDA&ixlib=rb-4.1.0&q=85",
+        "https://images.unsplash.com/photo-1756699280659-8d2f0a0263a4?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzOTB8MHwxfHNlYXJjaHwyfHxwcm9mZXNzaW9uYWwlMjBoZWFkc2hvdCUyMHBvcnRyYWl0JTIwZGl2ZXJzZSUyMHRlYW18ZW58MHx8fHwxNzcxNzgyMzA1fDA&ixlib=rb-4.1.0&q=85",
+        "https://images.unsplash.com/photo-1760893107446-58b108d419d8?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzOTB8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBoZWFkc2hvdCUyMHBvcnRyYWl0JTIwZGl2ZXJzZSUyMHRlYW18ZW58MHx8fHwxNzcxNzgyMzA1fDA&ixlib=rb-4.1.0&q=85"
+      ],
+      "project_thumbnails": [
+        "https://images.pexels.com/photos/28428591/pexels-photo-28428591.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        "https://images.pexels.com/photos/28428587/pexels-photo-28428587.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        "https://images.pexels.com/photos/29546669/pexels-photo-29546669.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        "https://images.pexels.com/photos/28544350/pexels-photo-28544350.png?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+      ]
+    }
+  },
+  "instructions_to_main_agent": [
+    "Install 'lucide-react' for icons.",
+    "Install '@dnd-kit/core' and '@dnd-kit/sortable' for Kanban.",
+    "Install 'recharts' for Dashboard charts.",
+    "Install 'date-fns' for date formatting.",
+    "Use 'react-hook-form' + 'zod' for all forms.",
+    "Ensure 'tailwind-merge' and 'clsx' are used for className concatenation.",
+    "Use a Layout component (Sidebar + Header + Main Content) for all authenticated pages.",
+    "Implement a Dark/Light mode toggle in the user settings or header.",
+    "For the Kanban board, ensure columns are scrollable if they overflow vertically, but the page doesn't scroll.",
+    "Use 'Sonner' for all toast notifications."
+  ],
+  "universal_guidelines": {
+    "do": [
+      "Use data-testid on all interactive elements.",
+      "Handle loading states with skeletons (shadcn Skeleton), not just spinners.",
+      "Validate all forms on the client side with Zod.",
+      "Use generic components for reuse (Button, Input, Card).",
+      "Make the UI dense but readable."
+    ],
+    "dont": [
+      "Do not use gradients for backgrounds (keep it flat/subtle).",
+      "Do not use 100% black shadows.",
+      "Do not hardcode colors (use Tailwind classes).",
+      "Do not use 'alert' or 'confirm' browser dialogues."
+    ]
+  },
+  "visual_enhancers": {
+    "micro_interactions": "Add 'scale-95' on click for buttons. Add 'ring-2' on focus.",
+    "empty_states": "Use one of the abstract 3D images with a clear CTA for empty projects/tickets.",
+    "loading": "Use a shimmering skeleton loader that matches the layout structure."
+  }
+}

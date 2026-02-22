@@ -14,7 +14,7 @@ export default function CreateTicketDialog({ open, onOpenChange, projectId, user
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
   const [priority, setPriority] = useState('medium');
-  const [assigneeId, setAssigneeId] = useState('');
+  const [assigneeId, setAssigneeId] = useState(undefined);
   const [creating, setCreating] = useState(false);
 
   const handleSubmit = async (e) => {
@@ -27,13 +27,13 @@ export default function CreateTicketDialog({ open, onOpenChange, projectId, user
         priority,
         status: 'todo',
         project_id: projectId,
-        assignee_id: assigneeId || null,
+        assignee_id: assigneeId === 'unassigned' || !assigneeId ? null : assigneeId,
       });
       toast.success('Ticket created successfully!');
       setTitle('');
       setDescription('');
       setPriority('medium');
-      setAssigneeId('');
+      setAssigneeId(undefined);
       onOpenChange(false);
       onSuccess();
     } catch (error) {

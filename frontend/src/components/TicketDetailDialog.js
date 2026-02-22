@@ -23,7 +23,7 @@ export default function TicketDetailDialog({ ticket, open, onOpenChange, users, 
   const [description, setDescription] = useState(ticket.description);
   const [priority, setPriority] = useState(ticket.priority);
   const [status, setStatus] = useState(ticket.status);
-  const [assigneeId, setAssigneeId] = useState(ticket.assignee_id || '');
+  const [assigneeId, setAssigneeId] = useState(ticket.assignee_id || undefined);
   const [comments, setComments] = useState([]);
   const [commentText, setCommentText] = useState('');
   const [loading, setLoading] = useState(false);
